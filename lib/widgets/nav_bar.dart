@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:personal_website/config/app_router.dart';
 
 import '../bloc/theme_bloc/cubit/theme_cubit.dart';
 
@@ -25,15 +27,21 @@ class NavBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).go(AppRouter.home);
+                  },
                   child: const Text("Home"),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).go(AppRouter.resume);
+                  },
                   child: const Text("Resume"),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).go(AppRouter.work);
+                  },
                   child: const Text("Work"),
                 ),
                 IconButton(onPressed: () {

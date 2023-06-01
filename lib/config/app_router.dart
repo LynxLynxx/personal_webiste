@@ -14,14 +14,32 @@ class AppRouter {
       GoRoute(
         path: home,
         builder: (context, state) => const HomeScreen(),
+        pageBuilder: (BuildContext context, GoRouterState state) =>
+            buildPageWithoutAnimation(
+          context: context,
+          state: state,
+          child: const HomeScreen(),
+        ),
       ),
       GoRoute(
         path: resume,
         builder: (context, state) => const ResumeScreen(),
+        pageBuilder: (BuildContext context, GoRouterState state) =>
+            buildPageWithoutAnimation(
+          context: context,
+          state: state,
+          child: const ResumeScreen(),
+        ),
       ),
       GoRoute(
         path: work,
         builder: (context, state) => const WorkScreen(),
+        pageBuilder: (BuildContext context, GoRouterState state) =>
+            buildPageWithoutAnimation(
+          context: context,
+          state: state,
+          child: const WorkScreen(),
+        ),
       ),
     ],
     initialLocation: home,
@@ -30,4 +48,16 @@ class AppRouter {
   );
 
   static GoRouter get router => _router;
+}
+
+CustomTransitionPage buildPageWithoutAnimation({
+  required BuildContext context,
+  required GoRouterState state,
+  required Widget child,
+}) {
+  return CustomTransitionPage(
+      key: state.pageKey,
+      child: child,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+          child);
 }
