@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'dart:js' as js;
 import '../widgets/nav_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -83,10 +83,17 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            js.context.callMethod(
+                                'open', ['https://github.com/LynxLynxx']);
+                          },
                           icon: const FaIcon(FontAwesomeIcons.github)),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            js.context.callMethod('open', [
+                              'https://www.linkedin.com/in/ryszard-schossler-578b0b225/'
+                            ]);
+                          },
                           icon: const FaIcon(FontAwesomeIcons.linkedin)),
                     ],
                   ),
