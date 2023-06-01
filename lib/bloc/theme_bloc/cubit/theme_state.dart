@@ -14,9 +14,9 @@ class ThemeInitial extends ThemeState {
 }
 
 class ThemeDark extends ThemeState {
-  ThemeDark(super.theme);
+  const ThemeDark(super.theme);
 }
 
 class ThemeLight extends ThemeState {
-  ThemeLight(super.theme);
+  const ThemeLight(super.theme);
 }

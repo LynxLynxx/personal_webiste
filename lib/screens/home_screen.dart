@@ -133,27 +133,27 @@ class NavBar extends StatelessWidget {
                   onPressed: () {},
                   child: const Text("Work"),
                 ),
-                IconButton(
-                    onPressed: () {
-                      if (BlocProvider.of<ThemeCubit>(context).state
-                              is ThemeInitial ||
-                          BlocProvider.of<ThemeCubit>(context).state
-                              is ThemeLight) {
-                        BlocProvider.of<ThemeCubit>(context)
-                            .switchTheme(ThemeMode.dark);
-                      } else if (BlocProvider.of<ThemeCubit>(context).state
-                          is ThemeDark) {
-                        BlocProvider.of<ThemeCubit>(context)
-                            .switchTheme(ThemeMode.light);
-                      }
-                      // ignore: unrelated_type_equality_checks
-                      // if (themeCubit.state is ThemeLight) {
-                      //   themeCubit.switchTheme(ThemeMode.dark);
-                      // } else if (themeCubit.state is ThemeInitial) {
-                      //   themeCubit.switchTheme(ThemeMode.dark);
-                      // }
-                    },
-                    icon: const Icon(Icons.dark_mode))
+                IconButton(onPressed: () {
+                  if (BlocProvider.of<ThemeCubit>(context).state
+                          is ThemeInitial ||
+                      BlocProvider.of<ThemeCubit>(context).state
+                          is ThemeLight) {
+                    BlocProvider.of<ThemeCubit>(context)
+                        .switchTheme(ThemeMode.dark);
+                  } else if (BlocProvider.of<ThemeCubit>(context).state
+                      is ThemeDark) {
+                    BlocProvider.of<ThemeCubit>(context)
+                        .switchTheme(ThemeMode.light);
+                  }
+                }, icon: BlocBuilder<ThemeCubit, ThemeState>(
+                  builder: (context, state) {
+                    if (state is ThemeLight || state is ThemeInitial) {
+                      return const Icon(Icons.dark_mode);
+                    } else {
+                      return const Icon(Icons.light_mode);
+                    }
+                  },
+                ))
               ],
             ),
           ),

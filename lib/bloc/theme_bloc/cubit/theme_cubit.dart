@@ -10,10 +10,10 @@ class ThemeCubit extends Cubit<ThemeState> {
   void switchTheme(ThemeMode theme) {
     switch (theme) {
       case ThemeMode.light:
-        emit(ThemeLight(ThemeMode.light));
+        emit(const ThemeLight(ThemeMode.light));
         break;
       case ThemeMode.dark:
-        emit(ThemeDark(ThemeMode.dark));
+        emit(const ThemeDark(ThemeMode.dark));
         break;
       default:
     }
