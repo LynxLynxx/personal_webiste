@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:personal_website/bloc/theme_bloc/cubit/theme_cubit.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -49,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          "I'm a mobile software engineer and in my free time I like to work on IoT embedded system projects. I completed my master's studies in mechatronics at the University of Rzeszów. At the end of my studies, I started working in a company that deals with R&D projects as a mechatronics engineer. My task was to create software for embedded systems and mobile applications. I really like learning new technologies. ",
+                          "I'm a mobile software engineer and in my free time I like to work on IoT embedded system projects. I completed my master's studies in mechatronics at the University of Rzeszów. At the end of my studies, In 2020 I started working in a company that deals with R&D projects as a mechatronics engineer. My task was to create software for embedded systems and mobile applications. I really like learning new technologies. ",
                           style: GoogleFonts.robotoMono(),
                           textAlign: TextAlign.justify,
                         ),
@@ -105,6 +107,7 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final ThemeCubit themeCubit = ThemeCubit();
     return SizedBox(
       height: 50,
       child: Row(
@@ -130,7 +133,27 @@ class NavBar extends StatelessWidget {
                   onPressed: () {},
                   child: const Text("Work"),
                 ),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.dark_mode))
+                IconButton(
+                    onPressed: () {
+                      if (BlocProvider.of<ThemeCubit>(context).state
+                              is ThemeInitial ||
+                          BlocProvider.of<ThemeCubit>(context).state
+                              is ThemeLight) {
+                        BlocProvider.of<ThemeCubit>(context)
+                            .switchTheme(ThemeMode.dark);
+                      } else if (BlocProvider.of<ThemeCubit>(context).state
+                          is ThemeDark) {
+                        BlocProvider.of<ThemeCubit>(context)
+                            .switchTheme(ThemeMode.light);
+                      }
+                      // ignore: unrelated_type_equality_checks
+                      // if (themeCubit.state is ThemeLight) {
+                      //   themeCubit.switchTheme(ThemeMode.dark);
+                      // } else if (themeCubit.state is ThemeInitial) {
+                      //   themeCubit.switchTheme(ThemeMode.dark);
+                      // }
+                    },
+                    icon: const Icon(Icons.dark_mode))
               ],
             ),
           ),
