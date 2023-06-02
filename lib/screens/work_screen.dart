@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:personal_website/widgets/nav_bar.dart';
+
+import '../widgets/large_work_screen.dart';
+import '../widgets/responsive.dart';
+import '../widgets/small_work_screen.dart';
 
 class WorkScreen extends StatelessWidget {
   const WorkScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: const [
-          NavBar(),
-          Center(
-            child: Text('Work'),
-          ),
-        ],
-      ),
-    );
+    return ResponsiveWidget.isLargeScreen(context)
+        ? const LargeWorkScreen()
+        : const SmallWorkScreen();
   }
 }
