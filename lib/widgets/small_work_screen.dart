@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../bloc/theme_bloc/cubit/theme_cubit.dart';
 import '../config/app_router.dart';
@@ -62,7 +61,7 @@ class SmallWorkScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
-            children: [],
+            children: const [],
           ),
         ),
       ),

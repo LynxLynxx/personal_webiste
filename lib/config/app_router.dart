@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:personal_website/screens/home_screen.dart';
+import 'package:personal_website/screens/more_work_screen.dart';
 import 'package:personal_website/screens/resume_screen.dart';
 import 'package:personal_website/screens/work_screen.dart';
 
@@ -8,6 +9,7 @@ class AppRouter {
   static const home = "/";
   static const resume = "/resume";
   static const work = "/work";
+  static const more = "/more";
 
   static final GoRouter _router = GoRouter(
     routes: <GoRoute>[
@@ -40,6 +42,16 @@ class AppRouter {
           state: state,
           child: const WorkScreen(),
         ),
+      ),
+      GoRoute(
+        path: more,
+        builder: (context, state) => const MoreWork(),
+        // pageBuilder: (BuildContext context, GoRouterState state) =>
+        //     buildPageWithoutAnimation(
+        //   context: context,
+        //   state: state,
+        //   child: const MoreWork(),
+        // ),
       ),
     ],
     initialLocation: home,

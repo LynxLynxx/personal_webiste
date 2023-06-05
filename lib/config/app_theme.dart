@@ -15,7 +15,7 @@ class AppTheme {
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
       brightness: Brightness.dark,
-      seedColor: const Color.fromRGBO(127, 176, 105, 1),
+      seedColor: const Color.fromRGBO(1, 251, 163, 1),
     ),
   );
 }
