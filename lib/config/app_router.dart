@@ -45,13 +45,7 @@ class AppRouter {
       ),
       GoRoute(
         path: more,
-        builder: (context, state) => const MoreWork(),
-        // pageBuilder: (BuildContext context, GoRouterState state) =>
-        //     buildPageWithoutAnimation(
-        //   context: context,
-        //   state: state,
-        //   child: const MoreWork(),
-        // ),
+        builder: (context, state) => MoreWork(),
       ),
     ],
     initialLocation: home,
