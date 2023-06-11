@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_website/config/app_router.dart';
 import 'package:personal_website/models/more_work_problem.dart';
+import 'package:personal_website/widgets/responsive.dart';
 
 import '../bloc/theme_bloc/cubit/theme_cubit.dart';
 
@@ -16,7 +17,9 @@ class MoreWork extends StatelessWidget {
     'assets/img/ss3.png',
     'assets/img/ss4.png',
   ];
-
+  final String projectTitle = "Ventilation Control";
+  final String projectDescription =
+      "Commercial project. The project consisted in creating software along with a mobile application to control the system. The software is designed to control ventilation in office buildings. Supervise whether the intake air from the outside is to be filtered or not. The designed system  continuously monitor the state of dust, temperature, air humidity and to estimate the level of filter wear. Decision algorithms developed for the needs of the project determine the mode of operation of the device in given conditions and control it Work. The aim of the task was to develop a framework solution enabling control over developed system via remote technologies. A set of controls and configuration switches that allow you to modify the parameters and settings of the system The measurement and control system is made available in the form of a control panel displayed on the screens of mobile devices operating under the control of the Android operating system. panel enables the visualization of measurement data and the status of actuators, as well as allows you to modify the settings of regulators responsible for automatic decisions control systems implemented by embedded software.";
   final List<MoreWorkProblem> problemSolved = [
     MoreWorkProblem(
         title: "Hiding the server's public IP address",
@@ -70,48 +73,28 @@ class MoreWork extends StatelessWidget {
             children: [
               Center(
                 child: Text(
-                  "Ventilation Control",
+                  projectTitle,
                   style: GoogleFonts.robotoMono(
                       fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(height: 15),
-              SizedBox(
-                height: 400,
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: urlImages.length,
-                          itemBuilder: (context, index) =>
-                              MoreWorkImage(urlAsset: urlImages[index]),
-                        ),
-                      ),
+              ResponsiveWidget.isLargeScreen(context)
+                  ? LargeScreenDescription(
+                      urlImages: urlImages,
+                      projectDescription: projectDescription,
+                    )
+                  : SmallScreenDescription(
+                      urlImages: urlImages,
+                      projectDescription: projectDescription,
                     ),
-                    Expanded(
-                      flex: 1,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Text(
-                          "Commercial project. The project consisted in creating software along with a mobile application to control the system. The software is designed to control ventilation in office buildings. Supervise whether the intake air from the outside is to be filtered or not. The designed system  continuously monitor the state of dust, temperature, air humidity and to estimate the level of filter wear. Decision algorithms developed for the needs of the project determine the mode of operation of the device in given conditions and control it Work. The aim of the task was to develop a framework solution enabling control over developed system via remote technologies. A set of controls and configuration switches that allow you to modify the parameters and settings of the system The measurement and control system is made available in the form of a control panel displayed on the screens of mobile devices operating under the control of the Android operating system. panel enables the visualization of measurement data and the status of actuators, as well as allows you to modify the settings of regulators responsible for automatic decisions control systems implemented by embedded software.",
-                          style: GoogleFonts.robotoMono(),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               const SizedBox(height: 25),
               Center(
                 child: Text(
                   'Major problems needed to be solved',
                   style: GoogleFonts.robotoMono(
                       fontSize: 24, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
                 ),
               ),
               ListView.builder(
@@ -124,6 +107,92 @@ class MoreWork extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SmallScreenDescription extends StatelessWidget {
+  const SmallScreenDescription({
+    super.key,
+    required this.urlImages,
+    required this.projectDescription,
+  });
+
+  final List<String> urlImages;
+  final String projectDescription;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 400,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: urlImages.length,
+              itemBuilder: (context, index) =>
+                  MoreWorkImage(urlAsset: urlImages[index]),
+            ),
+          ),
+        ),
+        const SizedBox(height: 15),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            projectDescription,
+            style: GoogleFonts.robotoMono(),
+            textAlign: TextAlign.justify,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class LargeScreenDescription extends StatelessWidget {
+  const LargeScreenDescription({
+    super.key,
+    required this.urlImages,
+    required this.projectDescription,
+  });
+
+  final List<String> urlImages;
+  final String projectDescription;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 400,
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: urlImages.length,
+                itemBuilder: (context, index) =>
+                    MoreWorkImage(urlAsset: urlImages[index]),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                projectDescription,
+                style: GoogleFonts.robotoMono(),
+                textAlign: TextAlign.justify,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
