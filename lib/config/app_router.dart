@@ -5,6 +5,8 @@ import 'package:personal_website/screens/more_work_screen.dart';
 import 'package:personal_website/screens/resume_screen.dart';
 import 'package:personal_website/screens/work_screen.dart';
 
+import '../const/projects.dart';
+
 class AppRouter {
   static const home = "/";
   static const resume = "/resume";
@@ -44,8 +46,24 @@ class AppRouter {
         ),
       ),
       GoRoute(
-        path: more,
-        builder: (context, state) => MoreWork(),
+        path: projects[0].moreUrl,
+        builder: (context, state) {
+          return MoreWork(
+              urlImages: projects[0].urlAssets,
+              projectTitle: projects[0].title,
+              projectDescription: projects[0].description,
+              problemSolved: projects[0].problemSolved);
+        },
+      ),
+      GoRoute(
+        path: projects[2].moreUrl,
+        builder: (context, state) {
+          return MoreWork(
+              urlImages: projects[2].urlAssets,
+              projectTitle: projects[2].title,
+              projectDescription: projects[2].description,
+              problemSolved: projects[2].problemSolved);
+        },
       ),
     ],
     initialLocation: home,

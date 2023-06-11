@@ -9,6 +9,7 @@ class WorkScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return LargeWorkScreen();
     return ResponsiveWidget.isLargeScreen(context)
         ? const LargeWorkScreen()
         : const SmallWorkScreen();
