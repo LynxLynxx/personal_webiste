@@ -65,6 +65,16 @@ class AppRouter {
               problemSolved: projects[2].problemSolved);
         },
       ),
+      GoRoute(
+        path: projects[3].moreUrl,
+        builder: (context, state) {
+          return MoreWork(
+              urlImages: projects[3].urlAssets,
+              projectTitle: projects[3].title,
+              projectDescription: projects[3].description,
+              problemSolved: projects[3].problemSolved);
+        },
+      ),
     ],
     initialLocation: home,
     // TODO: Stworzenie strony 404

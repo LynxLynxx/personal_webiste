@@ -9,7 +9,7 @@ import 'package:personal_website/widgets/responsive.dart';
 import '../bloc/theme_bloc/cubit/theme_cubit.dart';
 
 class MoreWork extends StatelessWidget {
-  MoreWork(
+  const MoreWork(
       {super.key,
       required this.urlImages,
       required this.projectTitle,

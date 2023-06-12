@@ -132,7 +132,7 @@ class LargeWorkScreen extends StatelessWidget {
                 isGithub: projects[index].isGithub,
                 assetUrl: projects[index].primaryAssetUrl,
                 title: projects[index].title,
-                description: projects[index].description,
+                description: projects[index].shortDescription,
                 stack: projects[index].stack,
                 githubUrl: projects[index].githubUrl,
                 liveUrl: projects[index].liveUrl,

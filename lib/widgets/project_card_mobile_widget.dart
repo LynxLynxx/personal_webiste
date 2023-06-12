@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:personal_website/config/app_router.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
 import 'package:personal_website/widgets/responsive.dart';

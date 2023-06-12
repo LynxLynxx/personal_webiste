@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
 import '../models/more_work_problem.dart';
+// ignore: avoid_web_libraries_in_flutter, unused_import
 import 'dart:js' as js;
 
 final List<Projects> projects = [
@@ -8,19 +7,35 @@ final List<Projects> projects = [
       cardProject: ProjectCardType.desktopCard,
       secondaryAssetUrl: '',
       githubUrl: 'https://github.com/LynxLynxx/personal_webiste',
-      liveUrl: '',
+      liveUrl: 'https://lynxlynxx.github.io/',
       moreUrl: '/morePortfolio',
       primaryAssetUrl: 'assets/img/personal_website.jpg',
       isGithub: true,
       isLive: true,
       isMore: true,
       title: 'Portfolio Website',
-      description: '',
+      description:
+          "This platform was meticulously crafted using Flutter, a versatile and powerful framework renowned for its ability to create stunning cross-platform applications. Leveraging the Flutter framework, I have implemented the BLoC (Business Logic Component) pattern, ensuring scalable and maintainable code architecture. Moreover, this website is fully responsive, adapting seamlessly to various screen sizes and devices. Whether you're browsing on a desktop, laptop, tablet, or mobile phone, you can experience the seamless functionality and captivating design of my projects. Witness the harmonious blend of Flutter, BLoC, and responsive design as you navigate through the portfolio, immersing yourself in the world of mobile development excellence.",
       shortDescription:
           "This is a page that presents me: what technologies I use, what kind of developer I am, what my interests are.",
       stack: "Flutter for Website, BLoC, Github Pages",
-      problemSolved: [],
-      urlAssets: []),
+      problemSolved: [
+        MoreWorkProblem(
+            title: 'Responsiveness',
+            description:
+                'To make this website responsive I needed to create widget that check if the screen is less than given breakpoint value. Current window size is comes from MediaQuery. In most cases I tried to use conditional statement do display widget that is made for large display or small display, but some times it was easier to create seprete screens for small or large displays.'),
+        MoreWorkProblem(
+            title: 'Change theme',
+            description:
+                "As we know, there's two kind of people: ones that belongs to dark side and these who belongs to light side. So naturaly I wanted to give people an option to choose if they want to use light or dark theme of the website.")
+      ],
+      urlAssets: [
+        'assets/img/pw2.png',
+        'assets/img/pw3.png',
+        'assets/img/pw4.png',
+        'assets/img/pw5.png',
+        'assets/img/personal_website.jpg',
+      ]),
   Projects(
       cardProject: ProjectCardType.mobileCard,
       secondaryAssetUrl: 'assets/img/easy_eat2.png',
@@ -75,32 +90,50 @@ final List<Projects> projects = [
       secondaryAssetUrl: '',
       githubUrl: 'https://github.com/LynxLynxx/kiw_app',
       liveUrl: '',
-      moreUrl: '',
+      moreUrl: '/more_acv',
       primaryAssetUrl: 'assets/img/t1_2.png',
-      isGithub: true,
+      isGithub: false,
       isLive: false,
-      isMore: false,
+      isMore: true,
       title: 'ACV',
-      description: '',
+      description:
+          "Introducing an innovative Flutter app that puts the power of controlling your AC and ventilation systems at your fingertips. Designed with convenience and comfort in mind, this app allows you to effortlessly adjust temperature, fan speed, and ventilation settings, all from your mobile device. With a user-friendly interface and seamless navigation, you can easily customize your indoor environment to suit your preferences and optimize energy efficiency. Developed using Flutter and leveraging the BLoC architecture, this app ensures a smooth and responsive user experience. Furthermore, to prioritize the security of communication, the app utilizes the MQTT protocol to establish a secure and reliable connection with the server. While I cannot disclose the code due to the project's commercial nature, rest assured that this app combines cutting-edge technology, intuitive design, and robust communication protocols to deliver a seamless and secure control solution for your AC and ventilation systems.\n\n As it was a commercial project I cannot show a source code.",
       shortDescription:
           "Commercial Project. The application is used to control ventilation and air conditioning in office buildings. If the air conditioning in a given room is turned on and the user opens a window in that room, the air conditioning will be turned off and inform user about this event. Communication with the server takes place using the MQTT protocol.",
       stack: 'Flutter, GetX, Push Notfications, MQTT',
-      problemSolved: [],
-      urlAssets: []),
+      problemSolved: [
+        MoreWorkProblem(
+            title: "Creating wireframe of an app",
+            description:
+                "Client wanted an app but did not had an UI design so i needed to create some sort of wireframe of an app. To develop an effective app, one of the initial steps is to create a wireframe to outline the layout and structure. While not focusing on the visual design elements, the wireframe serves as a blueprint that defines the app's various screens, features, and their interconnected flow. It helps in visualizing the app's hierarchy, navigation, and overall user experience. Through this wireframing process, you can carefully plan the placement of key elements, such as buttons, menus, and content sections, ensuring an intuitive and logical user interface. By establishing a solid wireframe foundation, you can align stakeholders' expectations, facilitate efficient collaboration, and provide a clear roadmap for subsequent development stages."),
+        MoreWorkProblem(
+            title: 'Notifications',
+            description:
+                "In the process of developing a mobile app, a notable challenge arose concerning notifications, and I successfully resolved it. Notifications play a crucial role in engaging and keeping users informed about relevant updates, events, or actions within the app. With meticulous problem-solving, I devised an effective solution that ensured timely and accurate notifications reached users. I established a seamless mechanism for delivering notifications to users' devices. Through thorough testing and iteration, I fine-tuned the notification system to ensure its reliability, efficiency, and compatibility across various mobile platforms. This accomplishment not only enhanced the app's user experience but also demonstrated my proficiency in resolving complex technical challenges to deliver a robust and user-friendly mobile app.")
+      ],
+      urlAssets: [
+        'assets/img/kiw1.jpg',
+        'assets/img/kiw2.png',
+        'assets/img/kiw3.png',
+        'assets/img/kiw4.png',
+        'assets/img/t1_2.png'
+      ]),
   Projects(
-      cardProject: ProjectCardType.desktopCard,
-      secondaryAssetUrl: '',
-      githubUrl: 'https://github.com/LynxLynxx/dashboard_flutter_web',
-      liveUrl: '',
+      cardProject: ProjectCardType.mobileCard,
+      secondaryAssetUrl: 'assets/img/md2.png',
+      githubUrl: 'https://github.com/LynxLynxx/mealdeal_app',
+      liveUrl:
+          'https://appetize.io/app/p2nai6gpc32lk4wum2daeqheoe?device=pixel4&osVersion=11.0&scale=75',
       moreUrl: '',
-      primaryAssetUrl: 'assets/img/personal_website.jpg',
+      primaryAssetUrl: 'assets/img/md1.png',
       isGithub: true,
-      isLive: false,
+      isLive: true,
       isMore: false,
-      title: 'RentCar Website',
+      title: 'Meal Deal',
       description: '',
-      shortDescription: '',
-      stack: 'Flutter Web',
+      shortDescription:
+          'Discover a user-friendly Flutter app that provides a visually appealing platform to explore and prepare a diverse range of delightful recipes. With its intuitive interface and comprehensive features, this app is designed to enhance your culinary experience and inspire your cooking endeavors.',
+      stack: 'Flutter, setState',
       problemSolved: [],
       urlAssets: [])
 ];
