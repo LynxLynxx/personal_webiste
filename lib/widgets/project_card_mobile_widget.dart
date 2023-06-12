@@ -224,13 +224,13 @@ class SmallMobileProjectDescription extends StatelessWidget {
             children: [
               Image.asset(
                 assetUrl,
-                width: 200,
+                width: 150,
                 height: 300,
               ),
               if (assetUrl2.isNotEmpty)
                 Image.asset(
                   assetUrl2,
-                  width: 200,
+                  width: 150,
                   height: 300,
                 ),
             ],
@@ -245,10 +245,13 @@ class SmallMobileProjectDescription extends StatelessWidget {
                 title,
                 style: GoogleFonts.robotoMono(fontSize: 24),
               ),
-              Text(
-                description,
-                textAlign: TextAlign.justify,
-                style: GoogleFonts.robotoMono(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 22),
+                child: Text(
+                  description,
+                  textAlign: TextAlign.justify,
+                  style: GoogleFonts.robotoMono(),
+                ),
               ),
               const SizedBox(height: 15),
               Text(
