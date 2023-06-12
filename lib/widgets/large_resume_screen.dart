@@ -274,6 +274,63 @@ class LargeResumeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 50),
+              Center(
+                child: SizedBox(
+                  width: 500,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Column(
+                      children: [
+                        Text(
+                          "Education",
+                          style: GoogleFonts.robotoMono(fontSize: 24),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          height: 5,
+                          width: 100,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 25),
+              SizedBox(
+                width: 500,
+                child: Card(
+                  child: ListTile(
+                    title: Text(
+                      "Master of Mechatronics • University of Rzeszów",
+                      style: GoogleFonts.robotoMono(),
+                    ),
+                    subtitle: Text(
+                      "I have successfully completed my Master's degree in Mechatronics with a specialization in measurement and control systems. This program equipped me with comprehensive knowledge and expertise in integrating mechanical, electrical, and computer engineering principles for precise measurements and efficient control. Through rigorous coursework and hands-on projects, I have developed strong skills in designing, calibrating, and optimizing measurement instruments and control systems. My educational background in Mechatronics, with a focus on measurement and control systems, uniquely positions me to contribute to projects and industries that demand expertise in advanced technological solutions.",
+                      style: GoogleFonts.robotoMono(),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: 500,
+                child: Card(
+                  child: ListTile(
+                    title: Text(
+                      "Engineer of Mechatronics • University of Rzeszów",
+                      style: GoogleFonts.robotoMono(),
+                    ),
+                    subtitle: Text(
+                      "I have successfully completed my Bachelor's degree in Mechatronics with a specialization in embedded systems. Throughout my studies, I gained comprehensive knowledge and practical skills in designing and developing embedded systems for various applications. With a strong background in Mechatronics and a specialization in embedded systems, I possess a deep understanding of IoT technologies and their integration into various applications. I am proficient in designing and implementing IoT architectures, connecting devices to cloud platforms, and developing custom IoT applications. My expertise includes working with IoT protocols such as MQTT and REST API, utilizing sensors and actuators for data collection and control, and developing intuitive user interfaces for IoT applications. Additionally, I have experience in developing firmware for IoT devices, optimizing power consumption, and ensuring data security in IoT systems. With my skills in creating IoT projects and apps, I am well-equipped to contribute to the rapidly evolving field of connected devices and smart solutions.",
+                      style: GoogleFonts.robotoMono(),
+                    ),
+                  ),
+                ),
+              ),
               const SizedBox(height: 12),
             ],
           ),

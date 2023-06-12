@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_website/screens/home_screen.dart';
 import 'package:personal_website/screens/more_work_screen.dart';
 import 'package:personal_website/screens/resume_screen.dart';
@@ -77,8 +78,25 @@ class AppRouter {
       ),
     ],
     initialLocation: home,
-    // TODO: Stworzenie strony 404
-    errorBuilder: (context, state) => Container(),
+    errorBuilder: (context, state) => Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(
+              "404",
+              style: GoogleFonts.getFont('Russo One', fontSize: 34),
+            ),
+          ),
+          Center(
+            child: Text(
+              "Page not found",
+              style: GoogleFonts.getFont('Russo One', fontSize: 34),
+            ),
+          )
+        ],
+      ),
+    ),
   );
 
   static GoRouter get router => _router;
