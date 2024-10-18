@@ -5,6 +5,42 @@ import 'dart:js' as js;
 final List<Projects> projects = [
   Projects(
       cardProject: ProjectCardType.desktopCard,
+      secondaryAssetUrl: "",
+      githubUrl: "https://github.com/LynxLynxx/appwrite_database_wrapper",
+      liveUrl: "",
+      moreUrl: "",
+      primaryAssetUrl: "",
+      isGithub: true,
+      isLive: false,
+      isMore: false,
+      title: "Appwrite Database Wrapper",
+      description: "",
+      shortDescription:
+          "A Dart package that provides a simple interface for interacting with Appwrite databases. It includes models and abstractions for facilitated integration and manipulation of Appwrite collections.This package was inspired by this Appwrite Video. This package is designed to be used with the Appwrite Flutter SDK and is compatible with Flutter projects.This package is still in development and may have some bugs. Please report any issues you encounter.",
+      stack: "Dart Package, Appwrite, Flutter",
+      problemSolved: [],
+      urlAssets: []),
+  Projects(
+    cardProject: ProjectCardType.mobileCard,
+    secondaryAssetUrl: 'assets/img/carlog2.png',
+    githubUrl: "https://github.com/LynxLynxx/Carlog",
+    liveUrl: "",
+    moreUrl: "",
+    primaryAssetUrl: "assets/img/carlog1.png",
+    isGithub: true,
+    isLive: false,
+    isMore: false,
+    title: "Carlog",
+    description: "",
+    shortDescription:
+        "Carlog is the ultimate app for anyone who wants to stay on top of their car's maintenance costs. With Carlog, you can:\n- Log expenses: Easily record all your car-related expenses, including fuel, repairs, maintenance, and more.\n- Categorize expenses: Organize your expenses into different categories to get a clear overview of your spending.\n- Set reminders: Never forget important maintenance tasks again. Carlog allows you to set reminders for oil changes, tire rotations, and other scheduled services.\n- Track mileage: Monitor your car's mileage to ensure you're getting the most out of your fuel.\n- View detailed reports: Generate comprehensive reports to analyze your spending patterns and identify areas for savings.",
+    stack:
+        "Flutter, Bloc, Firebase, Push Notifications, GetIt, Injectable, Freezed",
+    problemSolved: [],
+    urlAssets: [],
+  ),
+  Projects(
+      cardProject: ProjectCardType.desktopCard,
       secondaryAssetUrl: '',
       githubUrl: 'https://github.com/LynxLynxx/personal_webiste',
       liveUrl: 'https://lynxlynxx.github.io/',
@@ -36,23 +72,23 @@ final List<Projects> projects = [
         'assets/img/pw5.png',
         'assets/img/personal_website.jpg',
       ]),
-  Projects(
-      cardProject: ProjectCardType.mobileCard,
-      secondaryAssetUrl: 'assets/img/easy_eat2.png',
-      githubUrl: 'https://github.com/HeatEat/EasyEatApp',
-      liveUrl: '',
-      moreUrl: '',
-      primaryAssetUrl: 'assets/img/easy_eat.png',
-      isGithub: true,
-      isLive: false,
-      isMore: false,
-      title: 'EastEat',
-      description: '',
-      shortDescription:
-          'This is a private ongoing project. EasyEat is an application for ordering food for parcel machines, which are equipped with the ability to maintain the right temperature for the stored food.',
-      stack: 'Flutter, Bloc, GraphQL, Supabase',
-      problemSolved: [],
-      urlAssets: []),
+  // Projects(
+  //     cardProject: ProjectCardType.mobileCard,
+  //     secondaryAssetUrl: 'assets/img/easy_eat2.png',
+  //     githubUrl: 'https://github.com/HeatEat/EasyEatApp',
+  //     liveUrl: '',
+  //     moreUrl: '',
+  //     primaryAssetUrl: 'assets/img/easy_eat.png',
+  //     isGithub: true,
+  //     isLive: false,
+  //     isMore: false,
+  //     title: 'EastEat',
+  //     description: '',
+  //     shortDescription:
+  //         'This is a private ongoing project. EasyEat is an application for ordering food for parcel machines, which are equipped with the ability to maintain the right temperature for the stored food.',
+  //     stack: 'Flutter, Bloc, GraphQL, Supabase',
+  //     problemSolved: [],
+  //     urlAssets: []),
   Projects(
       cardProject: ProjectCardType.mobileCard,
       secondaryAssetUrl: 'assets/img/ss1.png',
@@ -118,24 +154,24 @@ final List<Projects> projects = [
         'assets/img/kiw4.png',
         'assets/img/t1_2.png'
       ]),
-  Projects(
-      cardProject: ProjectCardType.mobileCard,
-      secondaryAssetUrl: 'assets/img/md2.png',
-      githubUrl: 'https://github.com/LynxLynxx/mealdeal_app',
-      liveUrl:
-          'https://appetize.io/app/p2nai6gpc32lk4wum2daeqheoe?device=pixel4&osVersion=11.0&scale=75',
-      moreUrl: '',
-      primaryAssetUrl: 'assets/img/md1.png',
-      isGithub: true,
-      isLive: true,
-      isMore: false,
-      title: 'Meal Deal',
-      description: '',
-      shortDescription:
-          'Discover a user-friendly Flutter app that provides a visually appealing platform to explore and prepare a diverse range of delightful recipes. With its intuitive interface and comprehensive features, this app is designed to enhance your culinary experience and inspire your cooking endeavors.',
-      stack: 'Flutter, setState',
-      problemSolved: [],
-      urlAssets: [])
+  // Projects(
+  //     cardProject: ProjectCardType.mobileCard,
+  //     secondaryAssetUrl: 'assets/img/md2.png',
+  //     githubUrl: 'https://github.com/LynxLynxx/mealdeal_app',
+  //     liveUrl:
+  //         'https://appetize.io/app/p2nai6gpc32lk4wum2daeqheoe?device=pixel4&osVersion=11.0&scale=75',
+  //     moreUrl: '',
+  //     primaryAssetUrl: 'assets/img/md1.png',
+  //     isGithub: true,
+  //     isLive: true,
+  //     isMore: false,
+  //     title: 'Meal Deal',
+  //     description: '',
+  //     shortDescription:
+  //         'Discover a user-friendly Flutter app that provides a visually appealing platform to explore and prepare a diverse range of delightful recipes. With its intuitive interface and comprehensive features, this app is designed to enhance your culinary experience and inspire your cooking endeavors.',
+  //     stack: 'Flutter, setState',
+  //     problemSolved: [],
+  //     urlAssets: [])
 ];
 
 class Projects {

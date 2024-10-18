@@ -248,8 +248,26 @@ class LargeResumeScreen extends StatelessWidget {
                 child: Card(
                   child: ListTile(
                     title: Text(
-                      "Signum • 2020 - 2023",
+                      "H2B Group IT Consulting • 2023 - Present",
+                      style:
+                          GoogleFonts.robotoMono(fontWeight: FontWeight.w800),
+                    ),
+                    subtitle: Text(
+                      "• As an outsourced employee, I supported/managed teams in companies such as Appwrite, Omega Pilzno, Speednet, City of Poznan, University of Lublin\n• Manually publishing applications to the Google Play Store and Apple App Store but also creating CI/CD for this task.\n• Distributing apps via Firebase App Distribution and Testflight to testers",
                       style: GoogleFonts.robotoMono(),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: 500,
+                child: Card(
+                  child: ListTile(
+                    title: Text(
+                      "Signum • 2020 - 2023",
+                      style:
+                          GoogleFonts.robotoMono(fontWeight: FontWeight.w800),
                     ),
                     subtitle: Text(
                       "Creating software for mobile applications and embedded systems in R&D projects. Taking part in meetings aimed at defining technological solutions for a given issue from the IoT project. Creating technical documentation and user manuals for created projects. Technologies used: Flutter, Dart, Micropython, Latex, Python, Javascript, REST Api, MQTT, Git, Gitlab. During the period of my work, I participated in over 10 projects.",
@@ -265,7 +283,8 @@ class LargeResumeScreen extends StatelessWidget {
                   child: ListTile(
                     title: Text(
                       "University of Rzeszów • 2022 - 2023",
-                      style: GoogleFonts.robotoMono(),
+                      style:
+                          GoogleFonts.robotoMono(fontWeight: FontWeight.w800),
                     ),
                     subtitle: Text(
                       "Conducting laboratory classes in the field of programming languages and Internet technologies. Where I was teaching students about client-server communication, creating frontend aplications, etc.",

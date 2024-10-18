@@ -7,10 +7,13 @@ import 'package:personal_website/config/app_router.dart';
 import 'package:personal_website/config/app_theme.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:personal_website/core/services/firebase_service.dart';
 
 import 'bloc_observer.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FirebaseService.init();
   usePathUrlStrategy();
   Bloc.observer = MyBlocObserver();
   runApp(MultiBlocProvider(

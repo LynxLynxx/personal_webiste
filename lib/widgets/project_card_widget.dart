@@ -103,61 +103,68 @@ class LargeProjectDescriptionCard extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Image.asset(
-          assetUrl,
-          width: 500,
-          height: 300,
-        ),
-        SizedBox(
-          width: 350,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                title,
-                style: GoogleFonts.robotoMono(fontSize: 24),
-              ),
-              Text(
-                description,
-                textAlign: TextAlign.justify,
-                style: GoogleFonts.robotoMono(),
-              ),
-              const SizedBox(height: 15),
-              Text(
-                "Stack used:",
-                style: GoogleFonts.robotoMono(fontWeight: FontWeight.w700),
-              ),
-              Text(stack),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  if (isGithub)
-                    ElevatedButton.icon(
-                      onPressed: () {
-                        js.context.callMethod('open', [githubUrl]);
-                      },
-                      label: const Text("Code"),
-                      icon: const FaIcon(FontAwesomeIcons.github),
-                    ),
-                  if (isLive)
-                    ElevatedButton.icon(
-                      onPressed: () {
-                        js.context.callMethod('open', [liveUrl]);
-                      },
-                      label: const Text("Live"),
-                      icon: const Icon(Icons.live_tv_rounded),
-                    ),
-                  if (isMore)
-                    ElevatedButton(
-                      onPressed: () {
-                        GoRouter.of(context).push(moreUrl);
-                      },
-                      child: const Text("More"),
-                    ),
-                ],
-              ),
-            ],
+        if (assetUrl != "")
+          Image.asset(
+            assetUrl,
+            width: 500,
+            height: 300,
+          ),
+        Expanded(
+          // width: 350,
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  title,
+                  style: GoogleFonts.robotoMono(fontSize: 24),
+                ),
+                Text(
+                  description,
+                  textAlign: TextAlign.justify,
+                  style: GoogleFonts.robotoMono(),
+                ),
+                const SizedBox(height: 15),
+                Text(
+                  "Stack used:",
+                  style: GoogleFonts.robotoMono(fontWeight: FontWeight.w700),
+                ),
+                Text(stack),
+                const SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      if (isGithub)
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            js.context.callMethod('open', [githubUrl]);
+                          },
+                          label: const Text("Code"),
+                          icon: const FaIcon(FontAwesomeIcons.github),
+                        ),
+                      if (isLive)
+                        ElevatedButton.icon(
+                          onPressed: () {
+                            js.context.callMethod('open', [liveUrl]);
+                          },
+                          label: const Text("Live"),
+                          icon: const Icon(Icons.live_tv_rounded),
+                        ),
+                      if (isMore)
+                        ElevatedButton(
+                          onPressed: () {
+                            GoRouter.of(context).push(moreUrl);
+                          },
+                          child: const Text("More"),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],

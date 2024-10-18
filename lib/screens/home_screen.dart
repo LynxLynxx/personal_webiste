@@ -34,7 +34,7 @@ class LargeHomeScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.surface,
               Theme.of(context).colorScheme.primaryContainer,
             ],
           ),
@@ -123,7 +123,7 @@ class LargeHomeScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: 12),
                             Text(
-                              "I'm a mobile software engineer and in my free time I like to work on IoT embedded system projects. I completed my master's studies in mechatronics at the University of Rzeszów. At the end of my studies (in 2020) I started working in a company that deals with R&D projects as a mechatronics engineer. My task was to create software for embedded systems and mobile applications. I really like learning new technologies. You can see them in Resume tab!",
+                              "I'm a mobile software engineer and in my free time I like to work on IoT embedded system projects.\n\nI create mobile apps using Flutter as my primary language, but I can also use Swift to create native Apple ecosystem apps.  \n\nYou can see them in Resume tab!",
                               style: GoogleFonts.robotoMono(),
                               textAlign: TextAlign.justify,
                             ),
@@ -132,7 +132,7 @@ class LargeHomeScreen extends StatelessWidget {
                       ),
                       CircleAvatar(
                         backgroundColor:
-                            Theme.of(context).colorScheme.onBackground,
+                            Theme.of(context).colorScheme.onSurface,
                         radius: 200,
                         backgroundImage: const AssetImage(
                           'assets/img/me.png',
@@ -196,7 +196,7 @@ class SmallHomeScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Theme.of(context).colorScheme.background,
+              Theme.of(context).colorScheme.onSurface,
               Theme.of(context).colorScheme.primaryContainer,
             ],
           ),
@@ -273,7 +273,7 @@ class SmallHomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   CircleAvatar(
-                    backgroundColor: Theme.of(context).colorScheme.onBackground,
+                    backgroundColor: Theme.of(context).colorScheme.onSurface,
                     radius: 200,
                     backgroundImage: const AssetImage(
                       'assets/img/me.png',

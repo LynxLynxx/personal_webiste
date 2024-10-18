@@ -110,73 +110,79 @@ class LargeMobileProjectDescription extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Row(
             children: [
               Image.asset(
                 assetUrl,
-                width: 200,
-                height: 300,
+                // width: 200,
+                height: 350,
               ),
-              if (assetUrl2.isNotEmpty)
+              if (assetUrl2.isNotEmpty) ...[
+                SizedBox(width: 20),
                 Image.asset(
                   assetUrl2,
-                  width: 200,
-                  height: 300,
+                  // width: 200,
+                  height: 350,
                 ),
+              ],
             ],
           ),
         ),
-        SizedBox(
-          width: 400,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                title,
-                style: GoogleFonts.robotoMono(fontSize: 24),
-              ),
-              Text(
-                description,
-                textAlign: TextAlign.justify,
-                style: GoogleFonts.robotoMono(),
-              ),
-              const SizedBox(height: 15),
-              Text(
-                "Stack used:",
-                style: GoogleFonts.robotoMono(fontWeight: FontWeight.w700),
-              ),
-              Text(stack),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  if (isGithub)
-                    ElevatedButton.icon(
-                      onPressed: () {
-                        js.context.callMethod('open', [githubUrl]);
-                      },
-                      label: const Text("Code"),
-                      icon: const FaIcon(FontAwesomeIcons.github),
-                    ),
-                  if (isLive)
-                    ElevatedButton.icon(
-                      onPressed: () {
-                        js.context.callMethod('open', [liveUrl]);
-                      },
-                      label: const Text("Live"),
-                      icon: const Icon(Icons.live_tv_rounded),
-                    ),
-                  if (isMore)
-                    ElevatedButton(
-                      onPressed: () {
-                        GoRouter.of(context).push(moreUrl);
-                      },
-                      child: const Text("More"),
-                    ),
-                ],
-              ),
-            ],
+        Expanded(
+          // width: 400,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  title,
+                  style: GoogleFonts.robotoMono(fontSize: 24),
+                ),
+                Text(
+                  description,
+                  textAlign: TextAlign.justify,
+                  style: GoogleFonts.robotoMono(),
+                ),
+                const SizedBox(height: 15),
+                Text(
+                  "Stack used:",
+                  style: GoogleFonts.robotoMono(fontWeight: FontWeight.w700),
+                ),
+                Text(stack),
+                const SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    if (isGithub)
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          js.context.callMethod('open', [githubUrl]);
+                        },
+                        label: const Text("Code"),
+                        icon: const FaIcon(FontAwesomeIcons.github),
+                      ),
+                    if (isLive)
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          js.context.callMethod('open', [liveUrl]);
+                        },
+                        label: const Text("Live"),
+                        icon: const Icon(Icons.live_tv_rounded),
+                      ),
+                    if (isMore)
+                      ElevatedButton(
+                        onPressed: () {
+                          GoRouter.of(context).push(moreUrl);
+                        },
+                        child: const Text("More"),
+                      ),
+                  ],
+                ),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ],

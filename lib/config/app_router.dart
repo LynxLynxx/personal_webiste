@@ -47,16 +47,6 @@ class AppRouter {
         ),
       ),
       GoRoute(
-        path: projects[0].moreUrl,
-        builder: (context, state) {
-          return MoreWork(
-              urlImages: projects[0].urlAssets,
-              projectTitle: projects[0].title,
-              projectDescription: projects[0].description,
-              problemSolved: projects[0].problemSolved);
-        },
-      ),
-      GoRoute(
         path: projects[2].moreUrl,
         builder: (context, state) {
           return MoreWork(
@@ -76,6 +66,16 @@ class AppRouter {
               problemSolved: projects[3].problemSolved);
         },
       ),
+      // GoRoute(
+      //   path: projects[3].moreUrl,
+      //   builder: (context, state) {
+      //     return MoreWork(
+      //         urlImages: projects[3].urlAssets,
+      //         projectTitle: projects[3].title,
+      //         projectDescription: projects[3].description,
+      //         problemSolved: projects[3].problemSolved);
+      //   },
+      // ),
     ],
     initialLocation: home,
     errorBuilder: (context, state) => Scaffold(
